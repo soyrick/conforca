@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="es-VE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CONFORCA, C.A. — Ferretería industrial, materiales y mantenimiento</title>
+<meta name="description" content="Venta de materiales de ferretería y suministros para la industria. Herramientas, seguridad industrial, electricidad, fluidos y servicios de mantenimiento. Atención a empresas, contratistas y consumo final.">
+<meta name="theme-color" content="#28156E">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ ICONOS (sprite en línea) ============ -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></symbol>
+  <symbol id="i-usuario" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-carrito" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></symbol>
+  <symbol id="i-ubicacion" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-telefono" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-camion" viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-tarjeta" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></symbol>
+  <symbol id="i-herramienta" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-etiqueta" viewBox="0 0 24 24"><path d="M20.59 13.41 13.42 20.6a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.2"/></symbol>
+  <symbol id="i-tienda" viewBox="0 0 24 24"><path d="M3 9 4.5 3h15L21 9"/><path d="M4 9v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/></symbol>
+  <symbol id="i-abajo" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-izq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-der" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-arriba" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+  <symbol id="i-cerrar" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-estrella" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+  <symbol id="i-correo" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m20 6-11 11-5-5"/></symbol>
+</svg>
+
+<!-- ============ INTRO ============ -->
+<div id="intro" role="presentation">
+  <img src="assets/logo.jpg" alt="Conforca">
+</div>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- ============ BARRA SUPERIOR ============ -->
+<header class="cabecera" id="cabecera">
+
+  <!-- Aviso corredizo -->
+  <div class="aviso">
+    <div class="aviso-pista">
+      <span><svg class="ico"><use href="#i-camion"/></svg> Despacho a planta, obra y depósito</span>
+      <span><svg class="ico"><use href="#i-etiqueta"/></svg> Precios corporativos para empresas y contratistas</span>
+      <span><svg class="ico"><use href="#i-tarjeta"/></svg> Facturamos a crédito con orden de compra aprobada</span>
+      <span><svg class="ico"><use href="#i-herramienta"/></svg> Ferretería industrial + servicios de mantenimiento</span>
+      <span aria-hidden="true"><svg class="ico"><use href="#i-camion"/></svg> Despacho a planta, obra y depósito</span>
+      <span aria-hidden="true"><svg class="ico"><use href="#i-etiqueta"/></svg> Precios corporativos para empresas y contratistas</span>
+      <span aria-hidden="true"><svg class="ico"><use href="#i-tarjeta"/></svg> Facturamos a crédito con orden de compra aprobada</span>
+      <span aria-hidden="true"><svg class="ico"><use href="#i-herramienta"/></svg> Ferretería industrial + servicios de mantenimiento</span>
+    </div>
+  </div>
+
+  <!-- Nav principal: marca / buscador / sesión -->
+  <nav class="nav-principal" aria-label="Principal">
+    <div class="contenedor nav-principal-int">
+
+      <!-- El logo ya trae el nombre y el rubro: al lado solo va lo que la imagen
+           no dice, para no repetir la marca dos veces. -->
+      <a href="#inicio" class="marca" data-inicio>
+        <img src="assets/logo.jpg" alt="Conforca" class="marca-logo">
+        <span class="marca-texto">
+          <small>Ferretería industrial y suministros</small>
+        </span>
+      </a>
+
+      <div class="buscador" role="search">
+        <form class="buscador-caja" id="form-buscar" autocomplete="off">
+          <!-- Este bloque nace con ancho 0: al abrir, empuja el botón hacia la derecha. -->
+          <div class="buscador-campo">
+            <svg class="ico buscador-ico"><use href="#i-buscar"/></svg>
+            <input type="search" id="input-buscar" placeholder="¿Qué necesitas? Taladro, guantes, cable, válvula…"
+                   aria-label="Buscar productos" role="combobox" aria-expanded="false" aria-controls="resultados-buscar">
+            <button type="button" class="buscador-limpiar" id="btn-limpiar" aria-label="Limpiar búsqueda" hidden>
+              <svg class="ico"><use href="#i-cerrar"/></svg>
+            </button>
+          </div>
+          <button type="submit" class="buscador-btn" id="btn-buscar" aria-expanded="false" aria-controls="input-buscar">
+            <svg class="ico buscador-lupa"><use href="#i-buscar"/></svg>
+            <span>Buscar</span>
+          </button>
+        </form>
+        <div class="buscador-resultados" id="resultados-buscar" role="listbox" hidden></div>
+      </div>
+
+      <div class="nav-acciones">
+        <a class="btn-icono solo-escritorio" href="#carrito" id="btn-carrito" aria-label="Ver cotización">
+          <svg class="ico"><use href="#i-carrito"/></svg>
+          <span class="contador" id="contador-carrito" hidden>0</span>
+        </a>
+        <button class="btn btn-sesion" id="btn-sesion">
+          <svg class="ico"><use href="#i-usuario"/></svg>
+          <span>Iniciar sesión</span>
+        </button>
+        <button class="btn-icono solo-movil" id="btn-menu" aria-label="Abrir menú" aria-expanded="false">
+          <svg class="ico"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Nav secundario: productos + accesos -->
+  <nav class="nav-secundaria" aria-label="Secciones" id="nav-secundaria">
+    <div class="contenedor nav-secundaria-int">
+
+      <div class="desplegable" id="desplegable-productos">
+        <button class="nav-enlace nav-productos" id="btn-productos" aria-expanded="false" aria-haspopup="true">
+          <svg class="ico"><use href="#i-menu"/></svg>
+          <span>Productos</span>
+          <svg class="ico flechita"><use href="#i-abajo"/></svg>
+        </button>
+
+        <div class="megamenu" id="megamenu" hidden>
+          <div class="contenedor megamenu-int">
+            <div class="megamenu-col">
+              <h3><svg class="ico"><use href="#i-herramienta"/></svg> Ferretería general</h3>
+              <a href="#ferreteria">Herramienta manual</a>
+              <a href="#ferreteria">Tornillería y fijaciones</a>
+              <a href="#ferreteria">Medición y trazado</a>
+              <a href="#ferreteria">Cajas y organización</a>
+              <a href="#ferreteria">Abrasivos y acabado</a>
+            </div>
+            <div class="megamenu-col">
+              <h3><svg class="ico"><use href="#i-tienda"/></svg> Herramientas eléctricas</h3>
+              <a href="#electricas">Taladros y rotomartillos</a>
+              <a href="#electricas">Esmeriles y pulidoras</a>
+              <a href="#electricas">Sierras y caladoras</a>
+              <a href="#electricas">Lijadoras</a>
+              <a href="#electricas">Inalámbricas 20V</a>
+            </div>
+            <div class="megamenu-col">
+              <h3><svg class="ico"><use href="#i-escudo"/></svg> Seguridad industrial</h3>
+              <a href="#seguridad">Protección de cabeza</a>
+              <a href="#seguridad">Guantes y protección manual</a>
+              <a href="#seguridad">Trabajo en altura</a>
+              <a href="#seguridad">Iluminación de emergencia</a>
+              <a href="#seguridad">Control de acceso</a>
+            </div>
+            <div class="megamenu-col">
+              <h3><svg class="ico"><use href="#i-tarjeta"/></svg> Electricidad y control</h3>
+              <a href="#electricidad">Cables y conductores</a>
+              <a href="#electricidad">Breakers y tableros</a>
+              <a href="#electricidad">Tomacorrientes</a>
+              <a href="#electricidad">Iluminación LED</a>
+              <a href="#electricidad">Instrumentos de medición</a>
+            </div>
+            <div class="megamenu-col">
+              <h3><svg class="ico"><use href="#i-camion"/></svg> Plomería y fluidos</h3>
+              <a href="#fluidos">Tuberías y conexiones</a>
+              <a href="#fluidos">Válvulas y llaves de paso</a>
+              <a href="#fluidos">Grifería</a>
+              <a href="#fluidos">Piezas sanitarias</a>
+              <a href="#fluidos">Mangueras y sellantes</a>
+            </div>
+            <div class="megamenu-destacado">
+              <span class="mini-etiqueta">Para empresas</span>
+              <p>Armamos tu <strong>contrato de suministro</strong> con precios fijos y despacho programado.</p>
+              <a class="btn btn-negro" href="#contacto">Solicitar propuesta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <span class="nav-separador" aria-hidden="true"></span>
+
+      <a class="nav-enlace" href="#estrellas"><svg class="ico"><use href="#i-etiqueta"/></svg> Ofertas</a>
+      <a class="nav-enlace" href="#servicios"><svg class="ico"><use href="#i-herramienta"/></svg> Servicios</a>
+      <a class="nav-enlace" href="#ubicacion"><svg class="ico"><use href="#i-ubicacion"/></svg> Ubicación</a>
+      <a class="nav-enlace" href="#horarios"><svg class="ico"><use href="#i-reloj"/></svg> Horarios</a>
+      <a class="nav-enlace" href="#sucursales"><svg class="ico"><use href="#i-tienda"/></svg> Sedes</a>
+      <a class="nav-enlace" href="#contacto"><svg class="ico"><use href="#i-telefono"/></svg> Contacto</a>
+      <a class="nav-enlace" href="#nosotros">Nosotros</a>
+
+      <!-- DATO PLACEHOLDER: número de WhatsApp de la empresa -->
+      <a class="nav-whatsapp" href="https://wa.me/000000000000" target="_blank" rel="noopener">
+        <svg class="ico"><use href="#i-chat"/></svg> Cotiza por WhatsApp
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="contenido">
+  <span id="inicio" class="ancla"></span>
+
+  <!-- ============ HERO SLIDER ============ -->
+  <section class="hero" id="hero" aria-roledescription="carrusel" aria-label="Promociones destacadas">
+    <div class="hero-pista">
+
+      <article class="hero-lamina activa">
+        <img src="assets/img/hero-1.jpg" alt="" loading="eager">
+        <div class="hero-velo"></div>
+        <div class="contenedor hero-texto">
+          <span class="hero-cinta">Ferretería industrial</span>
+          <h1>Suministro industrial<br>de un solo proveedor</h1>
+          <p>Ferretería, seguridad, electricidad y fluidos para planta, obra y mantenimiento. Un solo pedido, una sola factura.</p>
+          <div class="hero-botones">
+            <a class="btn btn-azul" href="#ferreteria">Ver catálogo</a>
+            <a class="btn btn-fantasma" href="#contacto">Pedir cotización</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-lamina">
+        <img src="assets/img/hero-2.jpg" alt="" loading="lazy">
+        <div class="hero-velo"></div>
+        <div class="contenedor hero-texto">
+          <span class="hero-cinta">Marcas que aguantan turno completo</span>
+          <h1>Herramientas eléctricas<br>de uso industrial</h1>
+          <p>Taladros, esmeriles, sierras y lijadoras con garantía, repuestos y respaldo técnico.</p>
+          <div class="hero-botones">
+            <a class="btn btn-azul" href="#electricas">Ver herramientas</a>
+            <a class="btn btn-fantasma" href="#estrellas">Ofertas del mes</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-lamina">
+        <img src="assets/img/hero-3.jpg" alt="" loading="lazy">
+        <div class="hero-velo"></div>
+        <div class="contenedor hero-texto">
+          <span class="hero-cinta">Seguridad primero</span>
+          <h1>Dotación y EPP<br>para tu personal</h1>
+          <p>Cascos, guantes, iluminación y equipos de trabajo en altura. Despachamos dotaciones completas por contrato.</p>
+          <div class="hero-botones">
+            <a class="btn btn-azul" href="#seguridad">Ver seguridad industrial</a>
+            <a class="btn btn-fantasma" href="#contacto">Cotizar dotación</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-lamina">
+        <img src="assets/img/hero-4.jpg" alt="" loading="lazy">
+        <div class="hero-velo"></div>
+        <div class="contenedor hero-texto">
+          <span class="hero-cinta">Servicios y mantenimiento</span>
+          <h1>No solo vendemos:<br>también resolvemos</h1>
+          <p>Mantenimiento preventivo y correctivo con personal propio. Tú sigues produciendo, nosotros nos ocupamos.</p>
+          <div class="hero-botones">
+            <a class="btn btn-azul" href="#servicios">Ver servicios</a>
+            <a class="btn btn-fantasma" href="#nosotros">Conócenos</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <button class="hero-flecha izq" id="hero-anterior" aria-label="Lámina anterior"><svg class="ico"><use href="#i-izq"/></svg></button>
+    <button class="hero-flecha der" id="hero-siguiente" aria-label="Lámina siguiente"><svg class="ico"><use href="#i-der"/></svg></button>
+    <div class="hero-puntos" id="hero-puntos" role="tablist" aria-label="Seleccionar lámina"></div>
+  </section>
+
+  <!-- ============ FRANJA DE CONFIANZA ============ -->
+  <section class="franja">
+    <div class="contenedor franja-int">
+      <div class="franja-item"><svg class="ico"><use href="#i-camion"/></svg><div><strong>Despacho a planta</strong><span>Entrega programada en obra o depósito</span></div></div>
+      <div class="franja-item"><svg class="ico"><use href="#i-tarjeta"/></svg><div><strong>Crédito corporativo</strong><span>Facturamos contra orden de compra</span></div></div>
+      <div class="franja-item"><svg class="ico"><use href="#i-escudo"/></svg><div><strong>Producto certificado</strong><span>Marcas con respaldo de fábrica</span></div></div>
+      <div class="franja-item"><svg class="ico"><use href="#i-herramienta"/></svg><div><strong>Servicio técnico</strong><span>Mantenimiento con personal propio</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORÍAS (se pintan desde app.js) ============ -->
+  <div id="categorias"></div>
+
+  <!-- ============ MÁS VENDIDOS ============ -->
+  <section class="estrellas" id="estrellas">
+    <div class="contenedor">
+      <header class="seccion-cabeza estrellas-cabeza">
+        <div>
+          <span class="mini-etiqueta">Lo más pedido</span>
+          <h2>Los que más salen</h2>
+          <p>Lo que más rota en mostrador y en despacho a empresas. Precios de este mes, hasta agotar existencia.</p>
+        </div>
+        <!-- DATO PLACEHOLDER: número de WhatsApp de la empresa -->
+        <a class="btn btn-azul" href="https://wa.me/000000000000" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+      </header>
+      <div class="rejilla-estrellas" id="rejilla-estrellas"></div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICIOS ============ -->
+  <section class="categoria" id="servicios">
+    <div class="contenedor">
+      <header class="seccion-cabeza revelar">
+        <div>
+          <span class="mini-etiqueta">Servicios</span>
+          <h2>Servicios y mantenimiento</h2>
+          <p>Además del suministro, ejecutamos el trabajo. Personal propio, herramienta propia y responsabilidad sobre el resultado.</p>
+        </div>
+        <a class="enlace-todo" href="#contacto">Solicitar visita <svg class="ico"><use href="#i-der"/></svg></a>
+      </header>
+      <div class="info-tarjetas">
+        <article class="tarjeta-info">
+          <h3><svg class="ico"><use href="#i-herramienta"/></svg> Mantenimiento industrial</h3>
+          <p>Preventivo y correctivo de equipos, líneas y áreas de planta, con cronograma y reporte por intervención.</p>
+        </article>
+        <article class="tarjeta-info">
+          <h3><svg class="ico"><use href="#i-tarjeta"/></svg> Electricidad y control</h3>
+          <p>Montaje y revisión de tableros, acometidas, iluminación industrial y puntos de fuerza.</p>
+        </article>
+        <article class="tarjeta-info">
+          <h3><svg class="ico"><use href="#i-camion"/></svg> Plomería y fluidos</h3>
+          <p>Instalación y reparación de redes de agua, aire y drenaje. Detección y corrección de fugas.</p>
+        </article>
+        <article class="tarjeta-info">
+          <h3><svg class="ico"><use href="#i-escudo"/></svg> Contratos de suministro</h3>
+          <p>Abastecimiento recurrente con precios fijos, stock reservado y despacho programado a tu almacén.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARCAS ============ -->
+  <section class="marcas">
+    <div class="contenedor">
+      <p class="marcas-titulo">Trabajamos con las marcas que el técnico pide</p>
+      <div class="marcas-lista">
+        <span>TRUPER</span><span>STANLEY</span><span>DEWALT</span><span>BLACK+DECKER</span>
+        <span>BOSCH</span><span>TOTAL</span><span>INGCO</span><span>PAVCO</span>
+        <span>3M</span><span>SIKA</span><span>SCHNEIDER</span><span>YALE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOSOTROS + UBICACIÓN + HORARIOS ============ -->
+  <section class="info" id="nosotros">
+    <div class="contenedor info-int">
+
+      <div class="info-texto">
+        <span class="mini-etiqueta">Suministro y servicio para la industria</span>
+        <h2>Somos Conforca</h2>
+        <p>Conforca, C.A. nació como empresa de servicios y mantenimiento, y creció hacia el suministro: hoy vendemos materiales de ferretería y artículos para la industria en general, desde el tornillo suelto hasta la dotación completa de una planta.</p>
+        <p>Esa doble condición es la diferencia. Conocemos el material porque lo instalamos nosotros mismos, así que cuando te recomendamos algo no estamos leyendo un catálogo: estamos hablando de lo que aguanta en campo.</p>
+        <ul class="info-lista">
+          <li><svg class="ico"><use href="#i-check"/></svg> Catálogo de ferretería, seguridad, electricidad y fluidos</li>
+          <li><svg class="ico"><use href="#i-check"/></svg> Cotizaciones formales para empresas y contratistas</li>
+          <li><svg class="ico"><use href="#i-check"/></svg> Despacho programado a planta, obra o depósito</li>
+          <li><svg class="ico"><use href="#i-check"/></svg> Servicios de mantenimiento con personal propio</li>
+        </ul>
+        <div class="info-numeros">
+          <!-- DATO PLACEHOLDER: cifras de ejemplo, confirmar con la empresa -->
+          <div><strong>+20</strong><span>Años en servicios y mantenimiento</span></div>
+          <div><strong>5.000+</strong><span>Artículos en catálogo</span></div>
+          <div><strong>100%</strong><span>Asesoría técnica antes de vender</span></div>
+        </div>
+      </div>
+
+      <div class="info-tarjetas">
+
+        <article class="tarjeta-info" id="ubicacion">
+          <h3><svg class="ico"><use href="#i-ubicacion"/></svg> Dónde estamos</h3>
+          <!-- DATO PLACEHOLDER: dirección real de la empresa -->
+          <p><strong>Av. Principal, Zona Industrial</strong><br>Venezuela.</p>
+          <p class="tarjeta-nota">Pendiente: dirección exacta y punto de referencia para el despacho.</p>
+          <a class="btn btn-negro" href="https://www.google.com/maps/search/?api=1&query=Conforca" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </article>
+
+        <article class="tarjeta-info" id="horarios">
+          <h3><svg class="ico"><use href="#i-reloj"/></svg> Horarios de atención</h3>
+          <!-- DATO PLACEHOLDER: horario referencial, confirmar con el cliente -->
+          <table class="tabla-horario">
+            <tr><th>Lunes a viernes</th><td>8:00 a.m. – 5:00 p.m.</td></tr>
+            <tr><th>Sábado</th><td>8:00 a.m. – 12:00 m.</td></tr>
+            <tr><th>Domingo</th><td class="cerrado">Cerrado</td></tr>
+          </table>
+          <p class="tarjeta-nota">Emergencias de mantenimiento contratado: atención fuera de horario.</p>
+        </article>
+
+        <article class="tarjeta-info" id="sucursales">
+          <h3><svg class="ico"><use href="#i-tienda"/></svg> Sedes</h3>
+          <!-- DATO PLACEHOLDER: sedes de ejemplo para el demo -->
+          <ul class="lista-sucursales">
+            <li><strong>Sede principal</strong><span>Oficina, mostrador y almacén</span></li>
+            <li><strong>Depósito de materiales</strong><span>Despacho al mayor y carga</span></li>
+            <li><strong>Taller de servicios</strong><span>Mantenimiento y reparación de equipos</span></li>
+          </ul>
+        </article>
+
+        <article class="tarjeta-info" id="contacto">
+          <h3><svg class="ico"><use href="#i-telefono"/></svg> Contacto</h3>
+          <!-- DATO PLACEHOLDER: teléfono, correo y redes de la empresa -->
+          <ul class="lista-contacto">
+            <li><svg class="ico"><use href="#i-chat"/></svg> <a href="https://wa.me/000000000000" target="_blank" rel="noopener">WhatsApp — pedidos y cotizaciones</a></li>
+            <li><svg class="ico"><use href="#i-telefono"/></svg> <a href="tel:+58000000000">+58 000 000 0000</a></li>
+            <li><svg class="ico"><use href="#i-correo"/></svg> <a href="mailto:ventas@conforca.com.ve">ventas@conforca.com.ve</a></li>
+            <li><svg class="ico"><use href="#i-instagram"/></svg> <a href="#contacto">Instagram — por definir</a></li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ PIE ============ -->
+<footer class="pie" id="carrito">
+  <div class="contenedor pie-int">
+
+    <div class="pie-col pie-marca">
+      <img src="assets/logo.jpg" alt="Conforca" class="pie-logo">
+      <p class="pie-legal">Servicios y Mantenimiento<br><span>Conforca, C.A. · RIF J-30912087-5</span></p>
+      <p class="pie-descripcion">Venta de materiales de ferretería y suministros para la industria, con servicio de mantenimiento propio.</p>
+      <div class="pie-social">
+        <!-- DATO PLACEHOLDER: redes sociales de la empresa -->
+        <a href="#contacto" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+        <a href="#contacto" aria-label="Facebook"><svg class="ico"><use href="#i-facebook"/></svg></a>
+        <a href="https://wa.me/000000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-chat"/></svg></a>
+      </div>
+    </div>
+
+    <div class="pie-col">
+      <h4>Categorías</h4>
+      <a href="#ferreteria">Ferretería general</a>
+      <a href="#electricas">Herramientas eléctricas</a>
+      <a href="#seguridad">Seguridad industrial</a>
+      <a href="#electricidad">Electricidad y control</a>
+      <a href="#fluidos">Plomería y fluidos</a>
+      <a href="#estrellas">Ofertas del mes</a>
+    </div>
+
+    <div class="pie-col">
+      <h4>La empresa</h4>
+      <a href="#nosotros">Quiénes somos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#sucursales">Sedes</a>
+      <a href="#horarios">Horarios</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto">Ventas corporativas</a>
+    </div>
+
+    <div class="pie-col">
+      <h4>Dónde estamos</h4>
+      <!-- DATO PLACEHOLDER: dirección y contacto reales -->
+      <p class="pie-dato"><svg class="ico"><use href="#i-ubicacion"/></svg> Av. Principal, Zona Industrial. Venezuela.</p>
+      <p class="pie-dato"><svg class="ico"><use href="#i-reloj"/></svg> Lun a vie 8:00 a.m. – 5:00 p.m.<br>Sáb 8:00 a.m. – 12:00 m.</p>
+      <p class="pie-dato"><svg class="ico"><use href="#i-telefono"/></svg> +58 000 000 0000</p>
+      <p class="pie-dato"><svg class="ico"><use href="#i-correo"/></svg> ventas@conforca.com.ve</p>
+    </div>
+
+    <div class="pie-col pie-boletin">
+      <h4>Ofertas al correo</h4>
+      <p>Te avisamos cuando actualicemos precios y llegue mercancía nueva.</p>
+      <form class="pie-form" id="form-boletin">
+        <input type="email" placeholder="tucorreo@ejemplo.com" aria-label="Tu correo" required>
+        <button class="btn btn-azul" type="submit">Suscribirme</button>
+      </form>
+      <p class="pie-mini">Al suscribirte aceptas recibir promociones. Puedes salirte cuando quieras.</p>
+    </div>
+
+  </div>
+
+  <div class="pie-barra">
+    <div class="contenedor pie-barra-int">
+      <p>© <span id="anio"></span> Conforca, C.A. — Servicios y Mantenimiento. Todos los derechos reservados.</p>
+      <p class="pie-aviso">Demo de interfaz. Precios e inventario de ejemplo.</p>
+      <ul>
+        <li><a href="#nosotros">Términos y condiciones</a></li>
+        <li><a href="#nosotros">Política de privacidad</a></li>
+        <li><a href="#contacto">Reclamos</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOTANTES ============ -->
+<!-- DATO PLACEHOLDER: número de WhatsApp de la empresa -->
+<a class="flotante-whatsapp" href="https://wa.me/000000000000" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg class="ico"><use href="#i-chat"/></svg>
+  <span>¿Te ayudo?</span>
+</a>
+
+<button class="flotante-arriba" id="btn-arriba" aria-label="Volver arriba" hidden>
+  <svg class="ico"><use href="#i-arriba"/></svg>
+</button>
+
+<div class="tostada" id="tostada" role="status" aria-live="polite" hidden></div>
+
+<!-- ============ MODAL DE SESIÓN ============ -->
+<div class="modal" id="modal-sesion" hidden>
+  <div class="modal-fondo" data-cerrar-modal></div>
+  <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="titulo-sesion">
+    <button class="modal-cerrar" data-cerrar-modal aria-label="Cerrar"><svg class="ico"><use href="#i-cerrar"/></svg></button>
+    <img src="assets/logo.jpg" alt="" class="modal-logo">
+    <h2 id="titulo-sesion">Entra a tu cuenta</h2>
+    <p class="modal-sub">Lleva el historial de tus compras, tus cotizaciones y tus precios corporativos.</p>
+
+    <form id="form-sesion" class="modal-form">
+      <label>Correo o teléfono
+        <input type="text" name="usuario" placeholder="tucorreo@ejemplo.com" required>
+      </label>
+      <label>Contraseña
+        <input type="password" name="clave" placeholder="••••••••" required>
+      </label>
+      <div class="modal-fila">
+        <label class="modal-check"><input type="checkbox"> Mantener sesión abierta</label>
+        <a href="#" class="modal-enlace">¿Olvidaste la clave?</a>
+      </div>
+      <button class="btn btn-azul btn-ancho" type="submit">Entrar</button>
+    </form>
+
+    <p class="modal-pie">¿Todavía no tienes cuenta? <a href="#" class="modal-enlace">Regístrate aquí</a></p>
+    <p class="modal-demo">Módulo de demostración: no se envía ni se guarda ningún dato.</p>
+  </div>
+</div>
+
+<script src="app.js" type="module"></script>
+</body>
+</html>
