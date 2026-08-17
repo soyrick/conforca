@@ -565,6 +565,24 @@ h1, h2, h3, h4 {
 @keyframes barra-punto { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .hero:hover .hero-punto.activo::after { animation-play-state: paused; }
 
+/* Las flechas se revelan con `.hero:hover`, y en un dispositivo táctil el hover
+   se queda pegado después del primer toque: aparecían sobre el h1 y los botones
+   y ya no se iban. La causa no es el ancho de pantalla sino la falta de puntero
+   real —una tablet táctil de 900px tiene el mismo problema—, así que el corte va
+   por `hover: none`. El `max-width` cubre aparte el caso con ratón: por debajo
+   de 560px el margen de 18px de la flecha ya cae dentro del texto.
+   Los puntos de abajo siguen navegando y no tapan nada. */
+@media (hover: none), (max-width: 560px) {
+  .hero-flecha { display: none; }
+
+  /* Al quedar como única navegación manual, los puntos crecen y se separan para
+     poder tocarlos con el pulgar. Siguen por debajo de los 24px que pide la WCAG
+     para objetivos táctiles: agrandarlos más deforma la barra de progreso. */
+  .hero-puntos { bottom: 14px; gap: 14px; }
+  .hero-punto { height: 8px; }
+  .hero-punto.activo { width: 64px; }
+}
+
 /* =========================================================
    FRANJA DE CONFIANZA
    ========================================================= */
@@ -1038,6 +1056,12 @@ h1, h2, h3, h4 {
   /* Con el hero más alto ya entra la bajada: antes la escondía por falta de
      espacio, y dejarla fuera ahora solo generaba un hueco vacío. */
   .hero { height: clamp(360px, 47vh, 450px); }
+  /* Los dos botones no entran en una fila a este ancho y se envuelven, así que
+     el bloque de texto crece hasta meterse en la franja de puntos. El padding
+     reserva esa banda: como .hero-texto centra en vertical, el contenido sube
+     en vez de invadirla. Va acá y no en el corte por hover porque la causa es
+     el ancho, no el tipo de puntero. */
+  .hero-texto { padding-bottom: 46px; }
   .hero-texto p {
     font-size: 13.5px; margin: 12px 0 22px; max-width: 34ch;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
